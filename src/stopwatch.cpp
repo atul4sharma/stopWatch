@@ -15,7 +15,11 @@ stopWatch::stopWatch(QWidget *parent) :
     bar->addAction(startAction);
     bar->addAction(pauseAction);
     bar->addAction(resetAction);
-
+    
+    connect(startAction,SIGNAL(triggered()),SLOT(startTime()));
+    connect(pauseAction,SIGNAL(triggered()),SLOT(pauseTime()));
+    connect(resetAction,SIGNAL(triggered()),SLOT(resetTime()));
+        
     showTime();
     resize(180,150);
 }
