@@ -4,6 +4,7 @@
 #include <QLCDNumber>
 #include <QToolBar>
 #include <QAction>
+#include <QTimer>
 
 namespace Ui {
 class stopWatch;
@@ -19,12 +20,17 @@ class stopWatch : public QLCDNumber
     
     QToolBar *bar = new QToolBar(this);
     
-    QString min,sec,time;
+    long min,sec,msec;
+    QString time;
+    
+    QTimer *timer = new QTimer(this);
+    
     
 public slots:
     void resetTime();
     void startTime();
     void pauseTime();
+    void updateTime();
     
 
 public:
