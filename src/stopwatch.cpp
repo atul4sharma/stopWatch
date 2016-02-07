@@ -40,6 +40,7 @@ void stopWatch::resetTime()
 {   min=0;
     sec=0;
     showTime();
+    this->pauseTime();
 }
 
 void stopWatch::pauseTime()
