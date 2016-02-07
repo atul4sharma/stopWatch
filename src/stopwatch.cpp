@@ -4,7 +4,9 @@
 #include <QTimer>
 
 stopWatch::stopWatch(QWidget *parent) :
-    QLCDNumber(parent)
+    QLCDNumber(parent),
+    min("00"),
+    sec("00")
 {   
     startAction->setText("Start");
     pauseAction->setText("Pause");
@@ -14,10 +16,18 @@ stopWatch::stopWatch(QWidget *parent) :
     bar->addAction(pauseAction);
     bar->addAction(resetAction);
     
+    showTime();
+    
     resize(180,150);
 }
 
 stopWatch::~stopWatch()
 {
   
+}
+
+void stopWatch::showTime()
+{
+    time = min+":"+sec;
+    this->display(time);
 }

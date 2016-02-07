@@ -19,9 +19,12 @@ class stopWatch : public QLCDNumber
     
     QToolBar *bar = new QToolBar(this);
     
+    QString min,sec,time;
+    
 
 public:
     explicit stopWatch(QWidget *parent = 0);
+    void showTime();
     ~stopWatch();
 };
 
