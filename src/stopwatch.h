@@ -21,6 +21,11 @@ class stopWatch : public QLCDNumber
     
     QString min,sec,time;
     
+public slots:
+    void resetTime();
+    void startTime();
+    void pauseTime();
+    
 
 public:
     explicit stopWatch(QWidget *parent = 0);

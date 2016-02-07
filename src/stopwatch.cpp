@@ -15,9 +15,8 @@ stopWatch::stopWatch(QWidget *parent) :
     bar->addAction(startAction);
     bar->addAction(pauseAction);
     bar->addAction(resetAction);
-    
+
     showTime();
-    
     resize(180,150);
 }
 
@@ -27,7 +26,18 @@ stopWatch::~stopWatch()
 }
 
 void stopWatch::showTime()
-{
-    time = min+":"+sec;
+{   time = min+":"+sec;
     this->display(time);
+}
+
+void stopWatch::resetTime()
+{
+}
+
+void stopWatch::pauseTime()
+{
+}
+
+void stopWatch::startTime()
+{
 }
